@@ -86,17 +86,20 @@ export function GalleryCarousel() {
       >
         ‹
       </button>
-      <div className="flex min-w-0 flex-1 gap-2 sm:gap-4">
+      <div className="flex min-w-0 flex-1 gap-2 sm:gap-4 overflow-hidden">
         {visible.map((item, slot) => (
           <div
             key={`${index}-${item.id}-${slot}`}
-            className="relative h-36 min-h-0 w-0 flex-1 overflow-hidden rounded-xl bg-zinc-900/90 ring-1 ring-amber-100/40 sm:h-48 md:h-56 lg:h-72 dark:ring-zinc-700"
+            className={`relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-zinc-900/90 ring-1 ring-amber-100/40 dark:ring-zinc-700
+              h-48 sm:h-48 md:h-56 lg:h-72 sm:w-0
+              ${slot > 0 ? "hidden sm:block" : ""}
+            `}
           >
             <Image
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(max-width: 640px) 28vw, (max-width: 1024px) 30vw, 360px"
+              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 30vw, 360px"
               className="object-cover"
               priority={index === 0 && slot === 0}
             />

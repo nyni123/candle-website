@@ -57,7 +57,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://wa.me/910000000000?text=Hi%2C%20I%20want%20to%20order%20candles"
+                href="https://wa.me/918527634790?text=Hi%2C%20I%20want%20to%20order%20candles"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-600 px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-amber-50 dark:bg-amber-500 dark:hover:bg-amber-400 dark:focus-visible:ring-offset-zinc-950"
