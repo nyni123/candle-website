@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   title: "Home-based Candle Manufacturer | Retail & Custom Candles",
   description:
     "Handmade candles manufactured from home. We are the manufacturer of candles and also deal in retail and customised candles for all occasions.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
