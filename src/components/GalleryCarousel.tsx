@@ -6,6 +6,10 @@ import Image from "next/image";
 
 const AUTO_ADVANCE_MS = 4000;
 
+/** Light gray blur placeholder shown while image loads. */
+const BLUR_DATA_URL =
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBEQACEQD/2Q==";
+
 /** Filenames under public/candleImg — add new photos here when uploading. */
 const CANDLE_IMAGE_FILES = [
   "IMG-20260310-WA0067.jpg",
@@ -90,7 +94,7 @@ export function GalleryCarousel() {
         {visible.map((item, slot) => (
           <div
             key={`${index}-${item.id}-${slot}`}
-            className={`relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-zinc-900/90 ring-1 ring-amber-100/40 dark:ring-zinc-700
+            className={`relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-zinc-200/80 ring-1 ring-amber-100/40 dark:bg-zinc-800 dark:ring-zinc-700
               h-48 sm:h-48 md:h-56 lg:h-72 sm:w-0
               ${slot > 0 ? "hidden sm:block" : ""}
             `}
@@ -100,7 +104,9 @@ export function GalleryCarousel() {
               alt={item.alt}
               fill
               sizes="(max-width: 640px) 85vw, (max-width: 1024px) 30vw, 360px"
-              className="object-cover"
+              className="object-cover transition-opacity duration-300"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
               priority={index === 0 && slot === 0}
             />
           </div>
