@@ -90,12 +90,11 @@ export function GalleryCarousel() {
       >
         ‹
       </button>
-      <div className="flex min-w-0 flex-1 gap-2 sm:gap-4 overflow-hidden">
+      <div className="grid min-w-0 flex-1 grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-4 overflow-hidden">
         {visible.map((item, slot) => (
           <div
             key={`${index}-${item.id}-${slot}`}
-            className={`relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-zinc-200/80 ring-1 ring-amber-100/40 dark:bg-zinc-800 dark:ring-zinc-700
-              h-48 sm:h-48 md:h-56 lg:h-72 sm:w-0
+            className={`relative aspect-[4/3] min-h-0 min-w-0 overflow-hidden rounded-xl bg-zinc-200/80 ring-1 ring-amber-100/40 dark:bg-zinc-800 dark:ring-zinc-700
               ${slot > 0 ? "hidden sm:block" : ""}
             `}
           >
@@ -103,8 +102,8 @@ export function GalleryCarousel() {
               src={item.src}
               alt={item.alt}
               fill
-              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 30vw, 360px"
-              className="object-cover transition-opacity duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 360px"
+              className="object-cover object-center transition-opacity duration-300"
               placeholder="blur"
               blurDataURL={BLUR_DATA_URL}
               priority={index === 0 && slot === 0}
