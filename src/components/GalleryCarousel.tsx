@@ -23,7 +23,7 @@ const CANDLE_IMAGE_FILES = [
   "IMG-20260317-WA0042.jpg",
   "IMG-20260317-WA0044.jpg",
   "IMG-20260317-WA0045.jpg",
-  "IMG-20260317-WA0046.jpg",
+  "IMG-20260317-WA0046.jpeg",
   "IMG-20260317-WA0047.jpg",
   "IMG-20260317-WA0048.jpg",
   "IMG-20260317-WA0049.jpg",
@@ -32,6 +32,11 @@ const CANDLE_IMAGE_FILES = [
   "IMG-20260317-WA0052.jpg",
   "IMG-20260317-WA0053.jpg",
   "IMG-20260317-WA0054.jpg",
+  "IMG-20260317-WA0055.jpeg",
+  "IMG-20260317-WA0056.jpeg",
+  "IMG-20260317-WA0057.jpeg",
+  "IMG-20260317-WA0058.jpeg",
+  "IMG-20260317-WA0059.jpeg",
 ] as const;
 
 const IMAGES = CANDLE_IMAGE_FILES.map((file, i) => ({
@@ -94,7 +99,7 @@ export function GalleryCarousel() {
         {visible.map((item, slot) => (
           <div
             key={`${index}-${item.id}-${slot}`}
-            className={`relative aspect-[4/3] min-h-0 min-w-0 overflow-hidden rounded-xl bg-zinc-200/80 ring-1 ring-amber-100/40 dark:bg-zinc-800 dark:ring-zinc-700
+            className={`relative aspect-square min-h-0 min-w-0 overflow-hidden rounded-xl bg-zinc-200/80 ring-1 ring-amber-100/40 dark:bg-zinc-800 dark:ring-zinc-700
               ${slot > 0 ? "hidden sm:block" : ""}
             `}
           >
